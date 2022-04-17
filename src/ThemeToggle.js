@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { styled } from "./ui/stitches.config";
-import { SunIcon } from "@radix-ui/react-icons";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 
 export const ThemeToggle = () => {
   const [mounted, setMounted] = useState(false);
@@ -18,8 +18,13 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <SunIcon onClick={toggleTheme}>
-      Switch theme
-    </SunIcon>
+    <>
+    {resolvedTheme == "light" ?  
+      <SunIcon onClick={toggleTheme}>
+      </SunIcon>
+      : 
+      <MoonIcon onClick={toggleTheme}>
+      </MoonIcon>}
+    </>
   );
 };

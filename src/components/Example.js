@@ -31,12 +31,11 @@ export const Example = () => {
       })
 
     data.connectors[0].logo =
-        'https://raw.githubusercontent.com/MetaMask/brand-resources/master/SVG/metamask-fox.svg'
+        '/metamask-fox.svg'
     data.connectors[1].logo =
-        'https://raw.githubusercontent.com/WalletConnect/walletconnect-assets/master/svg/original/walletconnect-logo.svg'
+        '/walletconnect-logo.svg'
     data.connectors[2].logo =
-        'https://avatars.githubusercontent.com/u/18060234?s=200&v=4'
-
+        '/coinbasewallet-logo.png'
     if (!accountData)
         return (
        
@@ -45,6 +44,7 @@ export const Example = () => {
                         <LinkBreak2Icon />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
+                      
                         {data.connectors.map((connector) => (
                             <DropdownMenuItem
                                 disabled={!connector.ready}

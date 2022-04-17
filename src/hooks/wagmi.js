@@ -7,7 +7,7 @@ import { Buffer } from "buffer";
 if (!window.Buffer) {
   window.Buffer = Buffer;
 }
-const infuraId = "wss://mainnet.infura.io/ws/v3/83361a4b8a7140f495b70082caeca358"
+const infuraId = "d825deabe0454bbe8223e500dd8dd785"
 
 // Chains for connectors to support
 const chains = defaultChains
