@@ -7,9 +7,8 @@ export const Flexbox1 = styled('span', {
     padding:"",
     height:"50px",
     paddingTop:"10px",
+    paddingInline:"20px"
 
-  
-   
    
 })
 
