@@ -14,7 +14,7 @@ import {
 import { styled, darkTheme, createGlobalStyle } from '../ui/stitches.config'
 import { Text, Button } from '../ui/text.js'
 import { ThemeToggle } from '../ThemeToggle'
-import { Flexbox1, IconBoxes } from '../ui/flexboxes'
+import { Flexbox1, IconBoxes, NavabarContainer } from '../ui/flexboxes'
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
@@ -37,6 +37,7 @@ export const Separator = StyledSeparator;
 
 function Landingpage() {
   return (
+    <NavabarContainer>
     <Flexbox1>
       <IconBoxes>
         <HomeIcon />
@@ -45,7 +46,7 @@ function Landingpage() {
       <IconBoxes>
         <Pencil1Icon />
       </IconBoxes>
-
+      <Separator decorative orientation="vertical"css={{ margin: '0 15px' }}  />
       <IconBoxes>
         <GitHubLogoIcon />
       </IconBoxes>
@@ -53,9 +54,13 @@ function Landingpage() {
       <IconBoxes>
         <TwitterLogoIcon />
       </IconBoxes>
-      <Separator decorative orientation="vertical"css={{ margin: '0 15px' }}  />
+     
 
-      <IconBoxes>
+     
+    </Flexbox1>
+
+    <Flexbox1>
+    <IconBoxes>
         <ThemeToggle />
       </IconBoxes>
 
@@ -64,6 +69,7 @@ function Landingpage() {
         <Example/>
       </IconBoxes>
     </Flexbox1>
+   </NavabarContainer>
   )
 }
 export default Landingpage

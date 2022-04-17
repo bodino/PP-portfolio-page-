@@ -3,11 +3,29 @@ import { styled } from "./stitches.config";
 export const Flexbox1 = styled('span', {
 
     display: "flex",
-    // alignContent: "center",
+    alignContent: "center",
     padding:"",
     height:"50px",
     paddingTop:"10px",
+
+  
+   
+   
 })
+
+export const NavabarContainer = styled('span', {
+
+    display: "flex",
+     alignContent: "center",
+     justifyContent: "space-around",
+    padding:"",
+    height:"50px",
+    paddingTop:"10px",
+    flex: "1 1",
+    maxWidth: "1000px",
+    
+})
+
 
 export const IconBoxes = styled('span', {
 
