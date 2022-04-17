@@ -12,7 +12,14 @@ button {
   appearance: none;
   color: none;
   padding: none;
+  padding: 0px 0px;
   outline: none;
+  align-self: center;
+  justify-self: center;
+  align-items: center;
+  box-sizing: none;
+  display: flex;
+
 }
 
 .App {

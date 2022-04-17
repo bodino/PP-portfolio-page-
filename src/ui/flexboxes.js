@@ -16,7 +16,7 @@ export const NavabarContainer = styled('span', {
 
     display: "flex",
      alignContent: "center",
-     justifyContent: "space-around",
+     justifyContent: "space-between",
     padding:"",
     height:"50px",
     paddingTop:"10px",

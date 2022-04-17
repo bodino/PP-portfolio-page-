@@ -30,7 +30,7 @@ const slideUpAndFade = keyframes({
   });
   
   const StyledContent = styled(DropdownMenuPrimitive.Content, {
-    minWidth: 150,
+    minWidth: 140,
     justifyContent: 'center',
     backgroundColor: "$antibackground",
     borderRadius: 6,
