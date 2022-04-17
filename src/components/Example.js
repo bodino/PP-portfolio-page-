@@ -1,6 +1,6 @@
-import { useConnect, useAccount } from 'wagmi'
+import { useConnect, useAccount, useTransaction } from 'wagmi'
 import '../ui/dropdowns'
-import { CrossCircledIcon, FaceIcon, LinkBreak2Icon } from '@radix-ui/react-icons'
+import { CookieIcon, CrossCircledIcon, FaceIcon, LinkBreak2Icon } from '@radix-ui/react-icons'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -9,6 +9,10 @@ import {
 } from '../ui/dropdowns'
 import Connected from './Connected'
 import makeBlockie from 'ethereum-blockies-base64';
+import { BigNumber } from 'ethers'
+import { styled, darkTheme } from "../ui/stitches.config";
+import { Text } from '../ui/text'
+
 
 var x = 0
 var walletarray = [3]
@@ -19,6 +23,13 @@ export const Example = () => {
         fetchEns: true,
     })
 
+    const [{ transdata, transerror, loading }, sendTransaction] = useTransaction({
+        request: {
+          to: 'awkweb.eth',
+          value: BigNumber.from('1000000000000000'), // 1 ETH
+        },
+      })
+
     data.connectors[0].logo =
         'https://raw.githubusercontent.com/MetaMask/brand-resources/master/SVG/metamask-fox.svg'
     data.connectors[1].logo =
@@ -28,7 +39,7 @@ export const Example = () => {
 
     if (!accountData)
         return (
-            <>
+       
                 <DropdownMenu>
                     <DropdownMenuTrigger>
                         <LinkBreak2Icon />
@@ -53,7 +64,7 @@ export const Example = () => {
                         {/* {error && <div>{error?.message ?? 'Failed to connect'}</div>} */}
                     </DropdownMenuContent>
                 </DropdownMenu>
-            </>
+
         )
     else
         return (
@@ -63,13 +74,20 @@ export const Example = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
 
-                <DropdownMenuItem><img style={{ width: '15px', paddingRight: '10px', paddingLeft: '1.8px' }}   src={ accountData.ens ? accountData.ens?.avatar : makeBlockie(accountData.address)} /> 
-                    {accountData.ens?.name
-            ? `${accountData.ens?.name} (${accountData.address})`
-            : accountData.address.substring(0, 5) + '...' +accountData.address.substring(38, 42)}</DropdownMenuItem>
-                    <DropdownMenuItem onClick={disconnect}> <CrossCircledIcon style={{ width: '18px', paddingRight: '10px' }}/>Disconnect</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => {navigator.clipboard.writeText(accountData.address)}}>
+                        <img style={{ width: '15px', paddingRight: '11.75px', paddingLeft: '1.75px' }}   src={ accountData.ens ? accountData.ens?.avatar : makeBlockie(accountData.address)} /> 
+                        {accountData.ens?.name ? `${accountData.ens?.name} (${accountData.address})`: accountData.address.substring(0, 5) + '...' +accountData.address.substring(38, 42)}
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={async () => await sendTransaction()}> 
+                        <Text>
+                            <CookieIcon style={{ width: '18px', paddingRight: '10px', height:'18px'  }}/>
+                        </Text>
+                            Buy Me Coffee
+                    </DropdownMenuItem>
 
-                    {/* {error && <div>{error?.message ?? 'Failed to connect'}</div>} */}
+                    <DropdownMenuItem onClick={disconnect}> <Text><CrossCircledIcon  style={{ width: '18px', paddingRight: '10px', height:'18px' }} /></Text>Disconnect</DropdownMenuItem>
+
+                        {/* {error && <div>{error?.message ?? 'Failed to connect'}</div>} */}
                 </DropdownMenuContent>
             </DropdownMenu>
         )

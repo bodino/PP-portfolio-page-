@@ -1,8 +1,11 @@
 import { styled } from "./stitches.config";
 
 export const Text = styled('span', {
-    color:"$gray400",
-    fontSize:"$100",
+    color:"$background",
+    // fontSize:"$100",
+    // height:"18px"
+    display:"flex",
+    justifyContent:"center",
 })
 
 export const Button = styled('button', {

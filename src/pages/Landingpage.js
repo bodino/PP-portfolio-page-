@@ -18,16 +18,11 @@ import Connected from '../components/Connected'
 import Navabar from '../components/Navabar'
 
 
-
-
-
-
-
 function Landingpage() {
-
-
   return (
-   <Navabar/>
+
+    <Navabar/>
+
   )
 }
 export default Landingpage
