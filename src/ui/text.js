@@ -6,6 +6,7 @@ export const Text = styled('span', {
     // height:"18px"
     display:"flex",
     justifyContent:"center",
+   
 })
 
 export const Button = styled('button', {

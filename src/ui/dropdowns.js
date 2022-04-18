@@ -56,7 +56,7 @@ const slideUpAndFade = keyframes({
     // justifyContent: 'center',
     fontSize: 13,
     lineHeight: 1,
-    color: "$buttoncolor",
+    color: "$background",
     borderRadius: 3,
     display: 'flex',
     alignItems: 'center',
@@ -72,8 +72,8 @@ const slideUpAndFade = keyframes({
     },
   
     '&:focus': {
-      backgroundColor: "$background",
-      color: "$antibackground",
+      backgroundColor: "$buttoncolor",
+      color: "$background",
     },
   };
   

@@ -22,6 +22,7 @@
     "next-themes": "^0.1.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-responsive": "^9.0.0-beta.6",
     "react-scripts": "5.0.1",
     "url-loader": "^4.1.1",
     "util": "^0.12.4",

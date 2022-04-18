@@ -35,10 +35,11 @@ export const IconBoxes = styled('span', {
     alignItems:"center",
     width:"50px",
     height:"50px",
+    // border: " solid",
+    borderRadius: "5px",
     '&:hover': {
         backgroundColor: "$buttoncolor",
-        border: "2px solid $gray400 ",
-        borderRadius: "5px",
+
       },
 })
 
