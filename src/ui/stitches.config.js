@@ -53,8 +53,8 @@ export const {
 
  
   media: {
-    bp1: '(min-width: 640px)',
-    bp2: '(min-width: 768px)',
+    bp1: '(min-width: 750px)',
+    bp2: '(max-width: 749px)',
     bp3: '(min-width: 1024px)',
     
     dark: "(prefers-color-scheme: dark)",

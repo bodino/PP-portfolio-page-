@@ -5,7 +5,7 @@ import {styled, darkTheme, createGlobalStyle} from '../ui/stitches.config';
 import {Text, Button} from '../ui/text.js';
 import { Example } from '../components/Example'
 import { ThemeProvider } from 'next-themes';
-import { Flexbox1, IconBoxes, NavabarContainer } from '../ui/flexboxes'
+import { RightItemsBox, LeftSmallItemsBox,LeftLargeItemsBox, IconBoxes, NavabarContainer } from '../ui/flexboxes'
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { ThemeToggle } from '../ThemeToggle'
 import { useMediaQuery } from 'react-responsive'
@@ -20,6 +20,7 @@ import {
     HomeIcon,
     HamburgerMenuIcon,
   } from '@radix-ui/react-icons';
+import Verticalnavbarcomp from './Verticlenavbarcomp';
 
   const StyledSeparator = styled(SeparatorPrimitive.Root, {
     backgroundColor: "$buttoncolor",
@@ -52,8 +53,7 @@ function Navabar() {
 
   return (
     <NavabarContainer>
-  <MediaQuery minWidth={650}>
-    <Flexbox1>
+    <LeftLargeItemsBox>
       <IconBoxes onClick={handleHomeClick} css={{backgroundColor: homeClick ? "$buttoncolor" : ""}}>
         <HomeIcon />
       </IconBoxes>
@@ -72,26 +72,29 @@ function Navabar() {
    
 
      
-    </Flexbox1>
-    </MediaQuery>
-    <MediaQuery maxWidth={649}>
-    <Flexbox1>
+    </LeftLargeItemsBox>
+    <LeftSmallItemsBox>
       <IconBoxes>
-        <HamburgerMenuIcon></HamburgerMenuIcon>
+          <Verticalnavbarcomp
+          homeClick = {homeClick}
+          handleHomeClick = {handleHomeClick}
+          writingClick = {writingClick}
+          handleWritingClick = {handleWritingClick}
+          />
       </IconBoxes>
-    </Flexbox1>
-    </MediaQuery>
-    <Flexbox1>
-    <IconBoxes>
-        <ThemeToggle />
-      </IconBoxes>
+    </LeftSmallItemsBox>
+
+    <RightItemsBox>
+   
 
     
       <IconBoxes>
         <Example/>
       </IconBoxes>
-
-    </Flexbox1>
+      <IconBoxes>
+        <ThemeToggle />
+      </IconBoxes>
+    </RightItemsBox>
    </NavabarContainer>
   );
 }

@@ -19,6 +19,7 @@ button {
   align-items: center;
   box-sizing: none;
   display: flex;
+  border-width: 0px;
 
 }
 

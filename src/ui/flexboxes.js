@@ -1,16 +1,49 @@
 import { styled } from "./stitches.config";
 
-export const Flexbox1 = styled('span', {
+export const LeftLargeItemsBox = styled('span', {
 
     display: "flex",
     alignContent: "center",
     padding:"",
     height:"50px",
     paddingTop:"10px",
-    paddingInline:"20px"
+    paddingInline:"20px",
+    '@bp2': {
+        display: "none",
+      },
 
    
 })
+
+export const LeftSmallItemsBox = styled('span', {
+
+    display: "flex",
+    alignContent: "center",
+    padding:"",
+    height:"50px",
+    paddingTop:"10px",
+    paddingInline:"20px",
+    '@bp1': {
+        display: "none",
+      },
+
+   
+})
+
+export const RightItemsBox = styled('span', {
+
+    display: "flex",
+    alignContent: "center",
+    padding:"",
+    height:"50px",
+    paddingTop:"10px",
+    paddingInline:"20px",
+ 
+
+   
+})
+
+
 
 export const NavabarContainer = styled('span', {
 
@@ -30,7 +63,8 @@ export const IconBoxes = styled('span', {
 
     display: "flex",
     // alignContent: "center",
-    marginInline:"5px",
+    marginRight:"5px",
+    marginLeft:"5px",
     justifyContent:"center",
     alignItems:"center",
     width:"50px",

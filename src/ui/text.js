@@ -6,9 +6,18 @@ export const Text = styled('span', {
     // height:"18px"
     display:"flex",
     justifyContent:"center",
+     '&:focus': {
+      backgroundColor: "$background",
+      color: "$antibackground",
+      borderWidth: "0px",
+    },
+})
+export const RotateHamburger = styled('span', {
+    '&:hover': {
+        transform: 'rotate(90deg)'
+      },
    
 })
-
 export const Button = styled('button', {
     color:"$buttoncolor",
     fontSize:"$100",
