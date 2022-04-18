@@ -2,6 +2,7 @@
 svg {
   width: 20px;
   height: 50px;
+  /* padding-inline: 13px; */
 }
 
 
@@ -17,9 +18,13 @@ button {
   align-self: center;
   justify-self: center;
   align-items: center;
+  justify-content: center;
   box-sizing: none;
   display: flex;
   border-width: 0px;
+  width: 50px;
+  height: 50px;
+
 
 }
 

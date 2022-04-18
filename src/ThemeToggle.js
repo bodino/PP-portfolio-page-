@@ -19,12 +19,14 @@ export const ThemeToggle = () => {
 
   return (
     <>
+    <button onClick={toggleTheme}>
     {resolvedTheme == "light" ?  
-      <SunIcon onClick={toggleTheme}>
+      <SunIcon >
       </SunIcon>
       : 
-      <MoonIcon onClick={toggleTheme}>
+      <MoonIcon >
       </MoonIcon>}
+    </button>
     </>
   );
 };

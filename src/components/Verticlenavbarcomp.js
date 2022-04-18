@@ -38,15 +38,15 @@ function Verticalnavbarcomp({homeClick,handleHomeClick,writingClick,handleWritin
   return (
     <DropdownMenu>
                
-
+               <RotateHamburger>
       <DropdownMenuTrigger>
-      <RotateHamburger>
+     
 
        <HamburgerMenuIcon/>
-       </RotateHamburger>
+      
 
       </DropdownMenuTrigger>
-     
+      </RotateHamburger>
       <DropdownMenuContent>
 
       <DropdownMenuItem onClick={handleHomeClick} css={{backgroundColor: homeClick ? "$buttoncolor" : ""}}>       
